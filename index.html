@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bettas Cute Shop - Acuario Futurista</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="background-animation">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🐠</span>
+                <h1>Bettas Cute Shop</h1>
+            </div>
+            <nav class="nav">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#productos" class="nav-link">Productos</a>
+                <a href="#sobre" class="nav-link">Sobre Nosotros</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn-login" id="btnLogin">Iniciar Sesión</button>
+                <button class="btn-register" id="btnRegister">Registrarse</button>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <span class="user-name" id="userName"></span>
+                    <button class="btn-logout" id="btnLogout">Cerrar Sesión</button>
+                </div>
+            </div>
+            <div class="cart-icon" id="cartIcon">
+                <span class="cart-symbol">🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2 class="hero-title">Bienvenido al Futuro del Acuarismo</h2>
+            <p class="hero-subtitle">Los mejores peces Betta con tecnología de punta</p>
+            <button class="btn-primary" onclick="scrollToProducts()">Explorar Colección</button>
+        </div>
+        <div class="hero-decoration">
+            <div class="circle-decoration"></div>
+            <div class="circle-decoration"></div>
+            <div class="circle-decoration"></div>
+        </div>
+    </section>
+
+    <!-- Productos Section -->
+    <section class="products-section" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestra Colección Exclusiva</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="auth-modal" id="loginModal">
+        <div class="auth-modal-content">
+            <button class="close-modal" id="closeLogin">&times;</button>
+            <h2 class="auth-title">Iniciar Sesión</h2>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Correo Electrónico</label>
+                    <input type="email" id="loginEmail" class="form-input" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Contraseña</label>
+                    <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit">Ingresar</button>
+                <p class="auth-switch">¿No tienes cuenta? <span id="switchToRegister">Regístrate aquí</span></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="auth-modal" id="registerModal">
+        <div class="auth-modal-content">
+            <button class="close-modal" id="closeRegister">&times;</button>
+            <h2 class="auth-title">Crear Cuenta</h2>
+            <form class="auth-form" id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Nombre Completo</label>
+                    <input type="text" id="registerName" class="form-input" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Correo Electrónico</label>
+                    <input type="email" id="registerEmail" class="form-input" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Contraseña</label>
+                    <input type="password" id="registerPassword" class="form-input" placeholder="••••••••" minlength="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirmar Contraseña</label>
+                    <input type="password" id="registerConfirmPassword" class="form-input" placeholder="••••••••" minlength="6" required>
+                </div>
+                <button type="submit" class="btn-submit">Registrarse</button>
+                <p class="auth-switch">¿Ya tienes cuenta? <span id="switchToLogin">Inicia sesión aquí</span></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Carrito Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Tu Carrito</h2>
+                <button class="close-btn" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Items del carrito se cargarán aquí -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button class="btn-checkout">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sobre Nosotros -->
+    <section class="about-section" id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre Bettas Cute Shop</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="about-icon">🌟</div>
+                    <h3>Calidad Premium</h3>
+                    <p>Seleccionamos los mejores especímenes de Betta con colores vibrantes y salud garantizada</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🔬</div>
+                    <h3>Tecnología Avanzada</h3>
+                    <p>Utilizamos sistemas de crianza de última generación para garantizar peces saludables</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">💝</div>
+                    <h3>Cuidado Experto</h3>
+                    <p>Asesoramiento personalizado para el cuidado óptimo de tu nuevo Betta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bettas Cute Shop</h3>
+                    <p>Tu tienda futurista de peces Betta</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>📧 info@bettascuteshop.com</p>
+                    <p>📱 +1 234 567 8900</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Bettas Cute Shop. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
