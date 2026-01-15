@@ -254,7 +254,6 @@ console.log('%cTienda Futurista de Peces Betta',
 // Inicializar sistema de autenticación
 function initializeAuth() {
     const btnLogin = document.getElementById('btnLogin');
-    const btnRegister = document.getElementById('btnRegister');
     const btnLogout = document.getElementById('btnLogout');
     const loginModal = document.getElementById('loginModal');
     const registerModal = document.getElementById('registerModal');
@@ -268,11 +267,6 @@ function initializeAuth() {
     // Abrir modal de login
     btnLogin.addEventListener('click', () => {
         loginModal.classList.add('active');
-    });
-    
-    // Abrir modal de registro
-    btnRegister.addEventListener('click', () => {
-        registerModal.classList.add('active');
     });
     
     // Cerrar modales
@@ -400,18 +394,15 @@ function handleLogout() {
 // Actualizar UI de autenticación
 function updateAuthUI() {
     const btnLogin = document.getElementById('btnLogin');
-    const btnRegister = document.getElementById('btnRegister');
     const userMenu = document.getElementById('userMenu');
     const userName = document.getElementById('userName');
     
     if (currentUser) {
         btnLogin.style.display = 'none';
-        btnRegister.style.display = 'none';
         userMenu.style.display = 'flex';
         userName.textContent = `👋 ${currentUser.name}`;
     } else {
         btnLogin.style.display = 'block';
-        btnRegister.style.display = 'block';
         userMenu.style.display = 'none';
     }
 }
