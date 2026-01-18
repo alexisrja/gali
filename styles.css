@@ -271,18 +271,18 @@ body {
 .mobile-sidebar {
     position: fixed;
     top: 0;
-    right: -300px;
+    left: -300px;
     width: 280px;
     height: 100vh;
     background: var(--card-bg);
     z-index: 2000;
-    transition: right 0.3s ease;
+    transition: left 0.3s ease;
     overflow-y: auto;
-    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .mobile-sidebar.active {
-    right: 0;
+    left: 0;
 }
 
 .sidebar-overlay {
