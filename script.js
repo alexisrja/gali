@@ -195,9 +195,9 @@ function addScrollEffects() {
         
         // Cambiar opacidad del header
         if (currentScroll > 100) {
-            header.style.background = 'rgba(26, 31, 58, 0.95)';
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
         } else {
-            header.style.background = 'rgba(26, 31, 58, 0.9)';
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
         }
         
         lastScroll = currentScroll;
