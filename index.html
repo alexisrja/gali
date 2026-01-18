@@ -39,6 +39,11 @@
                 <a href="#sobre" class="nav-link">Sobre Nosotros</a>
                 <a href="#contacto" class="nav-link">Contacto</a>
             </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="auth-buttons">
                 <button class="btn-login" id="btnLogin">Iniciar Sesión</button>
                 <div class="user-menu" id="userMenu" style="display: none;">
@@ -52,6 +57,36 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Sidebar Menu -->
+    <div class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <h2>Menú</h2>
+            <button class="close-sidebar" id="closeSidebar">&times;</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#inicio" class="sidebar-link">Inicio</a>
+            <div class="sidebar-dropdown">
+                <button class="sidebar-link dropdown-toggle">Productos <span class="arrow">▼</span></button>
+                <div class="sidebar-submenu">
+                    <a href="#bettas" class="sidebar-sublink">Bettas</a>
+                    <a href="#plantas" class="sidebar-sublink">Plantas</a>
+                    <a href="#accesorios" class="sidebar-sublink">Accesorios</a>
+                    <a href="#otros-peces" class="sidebar-sublink">Otro tipo de peces</a>
+                </div>
+            </div>
+            <a href="#sobre" class="sidebar-link">Sobre Nosotros</a>
+            <a href="#contacto" class="sidebar-link">Contacto</a>
+            <div class="sidebar-auth">
+                <button class="sidebar-login-btn" id="sidebarLoginBtn">Iniciar Sesión</button>
+                <div class="sidebar-user-menu" id="sidebarUserMenu" style="display: none;">
+                    <span class="sidebar-user-name" id="sidebarUserName"></span>
+                    <button class="sidebar-logout-btn" id="sidebarLogoutBtn">Cerrar Sesión</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
