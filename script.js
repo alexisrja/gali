@@ -499,8 +499,26 @@ dropdownToggle.addEventListener('click', () => {
     sidebarSubmenu.classList.toggle('active');
 });
 
+// Handle nested dropdown in mobile menu
+const nestedToggle = document.querySelector('.nested-toggle');
+const nestedMenu = document.querySelector('.sidebar-nested-menu');
+
+if (nestedToggle && nestedMenu) {
+    nestedToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        nestedToggle.classList.toggle('active');
+        nestedMenu.classList.toggle('active');
+    });
+}
+
 // Cerrar menú al hacer clic en un enlace
 sidebarLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+// Close mobile menu when clicking on nested links
+const nestedLinks = document.querySelectorAll('.sidebar-nested-link');
+nestedLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
 });
 

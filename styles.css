@@ -235,6 +235,63 @@ body {
     padding-left: 25px;
 }
 
+/* Dropdown anidado */
+.dropdown-item-nested {
+    position: relative;
+}
+
+.dropdown-item-nested > .dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-item .arrow {
+    font-size: 0.8em;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: var(--card-bg);
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    margin-left: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    z-index: 1001;
+    border: 1px solid rgba(0, 246, 255, 0.3);
+}
+
+.dropdown-item-nested:hover .dropdown-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.dropdown-subitem {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-subitem:hover {
+    background: rgba(0, 246, 255, 0.1);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    padding-left: 25px;
+}
+
 /* Mobile Menu Toggle Button */
 .menu-toggle {
     display: none;
@@ -401,6 +458,56 @@ body {
     background: rgba(0, 246, 255, 0.15);
     color: var(--primary-color);
     padding-left: 45px;
+}
+
+/* Sidebar nested dropdown */
+.sidebar-nested-dropdown {
+    position: relative;
+}
+
+.nested-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nested-toggle .arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.nested-toggle.active .arrow {
+    transform: rotate(180deg);
+}
+
+.sidebar-nested-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-nested-menu.active {
+    max-height: 200px;
+}
+
+.sidebar-nested-link {
+    display: block;
+    padding: 10px 20px 10px 60px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.sidebar-nested-link:hover {
+    background: rgba(0, 246, 255, 0.2);
+    color: var(--primary-color);
+    padding-left: 65px;
 }
 
 /* Sidebar Auth Section */
